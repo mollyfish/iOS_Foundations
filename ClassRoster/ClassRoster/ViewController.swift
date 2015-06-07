@@ -10,14 +10,17 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var leftButton: UIButton!
+  @IBOutlet weak var rightButton: UIButton!
   @IBOutlet weak var displayRoster: UILabel!
   let roster = ["John Lennon", "Ringo Starr", "Paul McCartney", "George Harrison", "Yoko Ono"]
+  var i = 0
   
   
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
-    displayRoster.text = roster[0];
+    displayRoster.text = roster[i];
   }
 
   override func didReceiveMemoryWarning() {
@@ -28,10 +31,20 @@ class ViewController: UIViewController {
   
 
   @IBAction func scrollLeft(sender: AnyObject) {
-    view.backgroundColor.yellowColo)
+    if i > 0 {
+      i = i - 1
+      displayRoster.text = roster[i]
+    } else {
+      displayRoster.text = roster[i]
+    }
   }
 
   @IBAction func scrollRight(sender: AnyObject) {
+    if i < 4 {
+      i = i + 1
+      displayRoster.text = roster[i]
+    } else {
+      displayRoster.text = roster[i]
+    }
   }
 }
-
