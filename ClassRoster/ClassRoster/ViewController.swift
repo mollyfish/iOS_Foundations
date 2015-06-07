@@ -34,7 +34,11 @@ class ViewController: UIViewController {
     if i > 0 {
       i = i - 1
       displayRoster.text = roster[i]
+      if i < 1 {
+        i = roster.count
+      }
     } else {
+      i = roster.count
       displayRoster.text = roster[i]
     }
   }
@@ -43,7 +47,11 @@ class ViewController: UIViewController {
     if i < 4 {
       i = i + 1
       displayRoster.text = roster[i]
+      if i > (roster.count - 1) {
+        i = 0
+      }
     } else {
+      i = 0
       displayRoster.text = roster[i]
     }
   }
