@@ -19,57 +19,68 @@ class Pokemon {
 
 class Ponyta : Pokemon {
 //  type = "Fire"
-  func tailWhip() {
-    
+  func tailWhipWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier
+    println(damage)
+    return damage
   }
 }
 class Rapidash : Ponyta {
-  func fireBlast() {
-    
+  func fireBlastWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Chinchou : Pokemon {
 //  type = "Water"
-  func bubble() {
-    
+  func bubbleWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Lanturn : Chinchou {
-  func thunderWave() {
-    
+  func thunderWaveWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Boldore : Pokemon {
 //  type = "Rock"
-  func headbutt() {
-    
+  func headbuttWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Gigalith : Boldore {
-  func sandstorm() {
-    
+  func sandstormWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Vanillite : Pokemon {
 //  type = "Ice"
-  func icicleSpear() {
-    
+  func icicleSpearWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Vanillish : Vanillite {
-  func mirrorCoat() {
-    
+  func mirrorCoatWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Drowzee : Pokemon {
 //  type = "Psychic"
-  func hypnosis() {
-    
+  func hypnosisWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 class Hypno : Drowzee {
-  func futureSight() {
-    
+  func futureSightWithMultiplier(multiplier : Int) -> Int {
+    var damage = level * multiplier;
+    return damage;
   }
 }
 
@@ -83,3 +94,16 @@ let myVanillite = Vanillite(startingLevel: 3)
 let myVanillish = Vanillish(startingLevel: 6)
 let myDrowzee = Drowzee(startingLevel: 3)
 let myHypno = Hypno(startingLevel: 8)
+
+func battle(fighterOne : String, fighterTwo : String) -> String {
+  if fighterOne.damage < fighterTwo.damage {
+    return fighterTwo
+  } else {
+    return fighterOne
+  }
+}
+myHypno.futureSightWithMultiplier(6)
+myVanillish.mirrorCoatWithMultiplier(5)
+battle(myHypno, myVanillish)
+
+
