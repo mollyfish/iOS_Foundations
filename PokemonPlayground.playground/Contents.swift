@@ -7,9 +7,15 @@ class Pokemon {
   var health = 100
   var type = "None"
   var name : String?
+  var damage : Int?
   
   init (startingLevel : Int) {
     level = startingLevel
+  }
+  
+  func attackWithMultiplier(multiplier : Int) -> Int {
+    self.damage = level * multiplier
+    return self.damage!
   }
   
   func levelUp() {
@@ -19,69 +25,38 @@ class Pokemon {
 
 class Ponyta : Pokemon {
 //  type = "Fire"
-  func tailWhipWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier
-    println(damage)
-    return damage
-  }
+//  self.name = "Horseface"   **What's wrong here?  How do I name them?
 }
 class Rapidash : Ponyta {
-  func fireBlastWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Speedy"
 }
 class Chinchou : Pokemon {
 //  type = "Water"
-  func bubbleWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Chinchilla"
 }
 class Lanturn : Chinchou {
-  func thunderWaveWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Brighty"
 }
 class Boldore : Pokemon {
 //  type = "Rock"
-  func headbuttWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Oolite"
 }
 class Gigalith : Boldore {
-  func sandstormWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Schist"
 }
 class Vanillite : Pokemon {
 //  type = "Ice"
-  func icicleSpearWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Cup"
 }
 class Vanillish : Vanillite {
-  func mirrorCoatWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Cone"
 }
 class Drowzee : Pokemon {
 //  type = "Psychic"
-  func hypnosisWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Narcolepsy"
 }
 class Hypno : Drowzee {
-  func futureSightWithMultiplier(multiplier : Int) -> Int {
-    var damage = level * multiplier;
-    return damage;
-  }
+//  self.name = "Sleepy"
 }
 
 let myPonyta = Ponyta(startingLevel: 4)
@@ -95,15 +70,23 @@ let myVanillish = Vanillish(startingLevel: 6)
 let myDrowzee = Drowzee(startingLevel: 3)
 let myHypno = Hypno(startingLevel: 8)
 
-func battle(fighterOne : String, fighterTwo : String) -> String {
+func battle(fighterOne : Pokemon, fighterTwo : Pokemon) -> String {
+  fighterOne.attackWithMultiplier(2)
+  fighterTwo.attackWithMultiplier(3)
+  fighterOne.damage
+  fighterTwo.damage
   if fighterOne.damage < fighterTwo.damage {
-    return fighterTwo
+    fighterTwo.levelUp()
+//    fighterOne.health = (fighterOne.health - fighterTwo.damage)
+    return "FighterTwo wins!"
   } else {
-    return fighterOne
+    fighterOne.levelUp()
+    return "FighterOne wins!"
   }
 }
-myHypno.futureSightWithMultiplier(6)
-myVanillish.mirrorCoatWithMultiplier(5)
-battle(myHypno, myVanillish)
+
+battle(myHypno, myChinchou)
+
+
 
 
