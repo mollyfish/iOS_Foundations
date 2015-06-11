@@ -46,6 +46,29 @@ class ViewController: UIViewController, UITableViewDataSource {
     cell.textLabel?.text = personToDisplay.firstName + " " + personToDisplay.lastName
     return cell
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "showDetailViewController" {
+      
+      let detailViewController = segue.destinationViewController as! DetailViewController
+      //reference to the destination
+      
+      let indexPath = tableView.indexPathForSelectedRow()
+      //this is what was clicked
+      let selectedRow = indexPath!.row
+      //this ! deals with the fact that the indexPathForSelectedRow thing is optional (b/c what if you didn't click?). The ! 'unwraps' the optional to get at the value inside.  Leaving it like this is not great; if this was nil, then the app will crash.
+      let selectedPerson = people[selectedRow]
+      
+      detailViewController.selectedPerson = selectedPerson
+      //this is the actual handoff
+      
+//      detailViewController.selectedPerson =
+      
+      
+    
+      
+    }
+  }
 
 }
 
