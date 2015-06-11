@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+class Person {
+  var firstName : String
+  var lastName : String
+  
+  init (first : String, last: String) {
+    self.firstName = first
+    self.lastName = last
+  }
+}
