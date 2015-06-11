@@ -24,11 +24,15 @@ class ViewController: UIViewController, UITableViewDataSource {
     
     self.tableView.dataSource = self
     
-    let Molly = Person(first: "Molly", last: "Kent")
-    let Peg = Person(first: "Peggy", last: "Kent")
+    let John = Person(first: "John", last: "Lennon")
+    let Paul = Person(first: "Paul", last: "McCartney")
+    let George = Person(first: "George", last: "Harrison")
+    let Ringo = Person(first: "Ringo", last: "Starr")
     
-    self.people.append(Molly)
-    self.people.append(Peg)
+    self.people.append(John)
+    self.people.append(Paul)
+    self.people.append(George)
+    self.people.append(Ringo)
   }
   
   override func didReceiveMemoryWarning() {

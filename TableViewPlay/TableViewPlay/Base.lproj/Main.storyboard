@@ -64,7 +64,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zZ-7v-NOD">
-                                <rect key="frame" x="166" y="290" width="43" height="21"/>
+                                <rect key="frame" x="279" y="289" width="43" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fd1-c3-epG">
+                                <rect key="frame" x="279" y="318" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -72,12 +78,15 @@
                         </subviews>
                         <color key="backgroundColor" red="0.078924447939970443" green="1" blue="0.21430402540762117" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Fd1-c3-epG" firstAttribute="top" secondItem="1zZ-7v-NOD" secondAttribute="bottom" constant="8" id="8GQ-xv-ehc"/>
                             <constraint firstAttribute="centerY" secondItem="1zZ-7v-NOD" secondAttribute="centerY" id="NIj-dn-lq6"/>
                             <constraint firstAttribute="centerX" secondItem="1zZ-7v-NOD" secondAttribute="centerX" id="bSc-2t-dje"/>
+                            <constraint firstItem="1zZ-7v-NOD" firstAttribute="centerX" secondItem="Fd1-c3-epG" secondAttribute="centerX" id="gEN-If-dev"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="firstNameLabel" destination="1zZ-7v-NOD" id="Yy3-lL-ehb"/>
+                        <outlet property="lastNameLabel" destination="Fd1-c3-epG" id="klK-hM-UBc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3c-ef-eY6" userLabel="First Responder" sceneMemberID="firstResponder"/>
