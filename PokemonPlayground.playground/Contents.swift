@@ -77,7 +77,6 @@ func battle(fighterOne : Pokemon, fighterTwo : Pokemon) -> String {
   fighterTwo.damage
   if fighterOne.damage < fighterTwo.damage {
     fighterTwo.levelUp()
-//    fighterOne.health = (fighterOne.health - fighterTwo.damage)
     return "FighterTwo wins!"
   } else {
     fighterOne.levelUp()
