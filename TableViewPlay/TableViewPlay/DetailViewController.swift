@@ -8,21 +8,39 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextFieldDelegate {
   
-  @IBOutlet weak var firstNameLabel: UILabel!
+  @IBOutlet weak var firstNameTextField: UITextField!
   
-  @IBOutlet weak var lastNameLabel: UILabel!
+  @IBOutlet weak var lastNameTextField: UITextField!
   
   var selectedPerson : Person!
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      self.firstNameTextField.delegate = self
+      self.lastNameTextField.delegate = self
+      self.firstNameTextField.tag = 0
+      self.lastNameTextField.tag = 1
 
-      firstNameLabel.text = selectedPerson.firstName
-      lastNameLabel.text = selectedPerson.lastName
+      firstNameTextField.text = selectedPerson.firstName
+      lastNameTextField.text = selectedPerson.lastName
         // Do any additional setup after loading the view.
     }
+  
+  func textFieldShouldReturn(textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return false
+  }
+  
+  func textFieldDidEndEditing(textField: UITextField) {
+    if textField.tag == 0 {
+      selectedPerson.firstName = textField.text
+    } else {
+      selectedPerson.lastName = textField.text
+    }
+  }
 
 
 

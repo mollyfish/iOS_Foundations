@@ -67,11 +67,12 @@ class ViewController: UIViewController, UITableViewDataSource {
       //this is the actual handoff
       
 //      detailViewController.selectedPerson =
-      
-      
-    
-      
     }
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
   }
 
 }
