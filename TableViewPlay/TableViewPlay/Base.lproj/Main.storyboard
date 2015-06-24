@@ -21,13 +21,45 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="myTableCell" id="tQV-mb-paj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="85" id="tQV-mb-paj" customClass="PersonCell" customModule="TableViewPlay" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tQV-mb-paj" id="3WR-0h-QqA">
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ2-Fz-FCL">
+                                                    <rect key="frame" x="8" y="31" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fhs-OQ-BMy">
+                                                    <rect key="frame" x="58" y="31" width="44" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paul.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SLA-X8-x8b">
+                                                    <rect key="frame" x="569" y="27" width="23" height="29"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="23" id="5YS-8r-g3S"/>
+                                                        <constraint firstAttribute="height" constant="29" id="YHZ-Sx-Z4G"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="SLA-X8-x8b" firstAttribute="trailing" secondItem="3WR-0h-QqA" secondAttribute="trailingMargin" id="AsI-Wj-gWR"/>
+                                                <constraint firstItem="ZQ2-Fz-FCL" firstAttribute="leading" secondItem="3WR-0h-QqA" secondAttribute="leadingMargin" id="QHP-T7-7vx"/>
+                                                <constraint firstAttribute="centerY" secondItem="Fhs-OQ-BMy" secondAttribute="centerY" id="W51-jn-vvh"/>
+                                                <constraint firstAttribute="centerY" secondItem="ZQ2-Fz-FCL" secondAttribute="centerY" id="emK-KR-A2R"/>
+                                                <constraint firstAttribute="centerY" secondItem="SLA-X8-x8b" secondAttribute="centerY" id="hy1-W9-Hdh"/>
+                                                <constraint firstItem="Fhs-OQ-BMy" firstAttribute="leading" secondItem="ZQ2-Fz-FCL" secondAttribute="trailing" constant="8" id="kgf-Ba-UJu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="firstNameLabel" destination="ZQ2-Fz-FCL" id="duf-g7-dPs"/>
+                                            <outlet property="lastNameLabel" destination="Fhs-OQ-BMy" id="N3K-77-7Q9"/>
+                                            <outlet property="personImageView" destination="SLA-X8-x8b" id="q9A-LS-hMl"/>
                                             <segue destination="qGm-Qg-PbA" kind="show" identifier="showDetailViewController" id="TTl-pv-mmP"/>
                                         </connections>
                                     </tableViewCell>
@@ -49,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066.5" y="336.5"/>
+            <point key="canvasLocation" x="1066" y="336"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="ir3-MT-z6V">

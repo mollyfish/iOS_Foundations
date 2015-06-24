@@ -6,7 +6,6 @@
 //  Copyright (c) 2015 Molly Kent. All rights reserved.
 //
 import UIKit
-import Foundation
 
 class Person {
   var firstName : String

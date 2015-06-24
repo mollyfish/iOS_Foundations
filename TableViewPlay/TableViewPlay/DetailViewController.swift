@@ -10,39 +10,45 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
+  @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
-  @IBOutlet weak var imageView: UIImageView!
   
   var selectedPerson : Person!
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-      self.firstNameTextField.delegate = self
-      self.lastNameTextField.delegate = self
-      self.firstNameTextField.tag = 0
-      self.lastNameTextField.tag = 1
-
-      firstNameTextField.text = selectedPerson.firstName
-      lastNameTextField.text = selectedPerson.lastName
-        // Do any additional setup after loading the view.
-    }
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    self.setupTextFields()
+  }
+  
+  private func setupTextFields() {
+    
+    self.firstNameTextField.delegate = self
+    self.lastNameTextField.delegate = self
+    self.firstNameTextField.tag = 0
+    self.lastNameTextField.tag = 1
+    self.firstNameTextField.text = self.selectedPerson.firstName
+    self.lastNameTextField.text = self.selectedPerson.lastName
+    
+  }
   
   func textFieldShouldReturn(textField: UITextField) -> Bool {
+    
     textField.resignFirstResponder()
     return false
   }
   
   func textFieldDidEndEditing(textField: UITextField) {
     if textField.tag == 0 {
-      selectedPerson.firstName = textField.text
+      //set the first name
+      self.selectedPerson.firstName =  textField.text
     } else {
-      selectedPerson.lastName = textField.text
+      //set the last name
+      self.selectedPerson.lastName = textField.text
     }
   }
-
-
+  
   @IBAction func photoButtonPressed(sender: AnyObject) {
     
     let imagePickerController = UIImagePickerController()
@@ -56,11 +62,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
   }
   
   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
+    
     let image = info[UIImagePickerControllerEditedImage] as! UIImage
     self.imageView.image = image
     
     picker.dismissViewControllerAnimated(true, completion: nil)
   }
-
-
 }

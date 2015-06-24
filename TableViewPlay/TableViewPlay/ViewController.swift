@@ -11,41 +11,36 @@ import UIKit
 class ViewController: UIViewController, UITableViewDataSource {
 
   @IBOutlet weak var tableView: UITableView!
-//  var myArr = [String]()
   var people = [Person]()
   var myInfo = [String: Person]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
     
-//    self.myArr.append("Molly")
-//    self.myArr.append("Peg")
-//    self.myArr.append("Dan")
-    
+    self.loadPeopleFromPlist()
     self.tableView.dataSource = self
-    
-    let John = Person(first: "John", last: "Lennon")
-    let Paul = Person(first: "Paul", last: "McCartney")
-    let George = Person(first: "George", last: "Harrison")
-    let Ringo = Person(first: "Ringo", last: "Starr")
-    
-    self.people.append(John)
-    self.people.append(Paul)
-    self.people.append(George)
-    self.people.append(Ringo)
-    
-    self.myInfo["bff"] = Ringo
-    self.myInfo["buddy"] = Paul
-    
-    var QB1 = self.myInfo["bff1"]
-    QB1?.firstName
     
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  private func loadPeopleFromPlist() {
+    
+    if let peoplePath = NSBundle.mainBundle().pathForResource("People", ofType: "plist"),
+      peopleObjects = NSArray(contentsOfFile: peoplePath) as? [[String : String]]
+    {
+      for object in peopleObjects {
+      
+      if let firstName = object["FirstName"],
+        lastName = object["LastName"] {
+          let person = Person(first: firstName, last: lastName)
+          self.people.append(person)
+      }
+    }
+  }
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.tableView.reloadData()
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -53,19 +48,18 @@ class ViewController: UIViewController, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = self.tableView.dequeueReusableCellWithIdentifier("myTableCell", forIndexPath: indexPath) as! UITableViewCell
-    let personToDisplay = self.people[indexPath.row]
     
-    // no optional binding
-//    if personToDisplay.image != nil {
-//      cell.imageView?.image = personToDisplay.image!
-//    }
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PersonCell
+    let personToDisplay = people[indexPath.row]
+    
     //optional binding
     if let image = personToDisplay.image {
-      cell.imageView?.image = image
+      cell.personImageView.image = image
     }
     
-    cell.textLabel?.text = personToDisplay.firstName + " " + personToDisplay.lastName
+    cell.firstNameLabel.text = personToDisplay.firstName
+    cell.lastNameLabel.text = personToDisplay.lastName
+    
     return cell
   }
   
@@ -81,18 +75,13 @@ class ViewController: UIViewController, UITableViewDataSource {
       //this is what was clicked
       let selectedRow = indexPath.row
       let selectedPerson = people[selectedRow]
-          
-      
-      detailViewController.selectedPerson = selectedPerson
+//          println(selectedPerson.firstName)
+          detailViewController.selectedPerson = selectedPerson
         }
       }
     }
   }
   
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    self.tableView.reloadData()
-  }
+  
 
 }
-
