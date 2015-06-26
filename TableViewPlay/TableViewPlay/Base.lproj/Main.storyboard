@@ -40,10 +40,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paul.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="SLA-X8-x8b">
-                                                    <rect key="frame" x="569" y="27" width="23" height="29"/>
+                                                    <rect key="frame" x="562" y="27" width="30" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="23" id="5YS-8r-g3S"/>
-                                                        <constraint firstAttribute="height" constant="29" id="YHZ-Sx-Z4G"/>
+                                                        <constraint firstAttribute="height" constant="30" id="7lf-gb-zcI"/>
+                                                        <constraint firstAttribute="width" constant="30" id="HqA-wU-9qU"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -106,9 +106,11 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paul.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-Jw-VYc">
-                                <rect key="frame" x="180" y="148" width="240" height="327"/>
+                                <rect key="frame" x="258" y="148" width="84" height="114"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="rjf-rU-L1m"/>
+                                    <constraint firstAttribute="height" constant="114" id="oR5-1f-DmV"/>
+                                    <constraint firstAttribute="width" constant="84" id="rjf-rU-L1m"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="wXf-nn-pSi"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1P-2E-Zlr">
@@ -123,13 +125,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.6132170419534817" green="0.72179811945234373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="PQV-Jw-VYc" secondAttribute="centerX" id="0Ws-HQ-4nV"/>
                             <constraint firstAttribute="centerX" secondItem="yFl-xQ-z3q" secondAttribute="centerX" id="FbA-UK-FSh"/>
                             <constraint firstAttribute="centerX" secondItem="L1P-2E-Zlr" secondAttribute="centerX" id="Ldq-CW-MaH"/>
+                            <constraint firstAttribute="centerX" secondItem="PQV-Jw-VYc" secondAttribute="centerX" id="Vo4-P4-sGU"/>
                             <constraint firstItem="yQN-3H-jqj" firstAttribute="top" secondItem="yFl-xQ-z3q" secondAttribute="bottom" constant="8" id="WUp-0F-kmo"/>
+                            <constraint firstItem="PQV-Jw-VYc" firstAttribute="top" secondItem="yQN-3H-jqj" secondAttribute="bottom" constant="8" id="ZUa-m0-3Kv"/>
                             <constraint firstAttribute="centerX" secondItem="yQN-3H-jqj" secondAttribute="centerX" id="bV9-fD-iug"/>
                             <constraint firstItem="yFl-xQ-z3q" firstAttribute="top" secondItem="rYV-rx-rCa" secondAttribute="bottom" constant="8" id="c4B-Kl-5eA"/>
-                            <constraint firstItem="PQV-Jw-VYc" firstAttribute="top" secondItem="yQN-3H-jqj" secondAttribute="bottom" constant="8" id="cAC-yN-P9D"/>
                             <constraint firstItem="plk-Va-1ou" firstAttribute="top" secondItem="L1P-2E-Zlr" secondAttribute="bottom" constant="20" id="ncl-20-C3K"/>
                         </constraints>
                     </view>
