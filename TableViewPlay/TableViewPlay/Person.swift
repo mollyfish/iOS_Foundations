@@ -28,6 +28,8 @@ class Person : NSObject, NSCoding {
     
     aCoder.encodeObject(self.firstName, forKey: "firstName")
     aCoder.encodeObject(self.lastName, forKey: "lastName")
-    aCoder.encodeObject(self.image, forKey: "image")
+    if self.image != nil {
+      aCoder.encodeObject(self.image, forKey: "image")
+    }
   }
 }

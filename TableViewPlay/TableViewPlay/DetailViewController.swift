@@ -18,7 +18,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    
+    imageView.layer.cornerRadius = 8
+    imageView.layer.masksToBounds = true;
     self.setupTextFields()
   }
   

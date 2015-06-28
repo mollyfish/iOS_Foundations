@@ -60,7 +60,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     cell.backgroundColor = UIColor.whiteColor()
     cell.personImageView.layer.cornerRadius = 15
     cell.personImageView.layer.masksToBounds = true;
-    cell.personImageView.layer.borderWidth = 10
+    cell.personImageView.layer.borderWidth = 1
     cell.personImageView.layer.borderColor = UIColor.blueColor().CGColor
     
     let personToDisplay = people[indexPath.row]
