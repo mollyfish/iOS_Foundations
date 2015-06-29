@@ -105,14 +105,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paul.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="PQV-Jw-VYc">
-                                <rect key="frame" x="258" y="148" width="84" height="114"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="114" id="oR5-1f-DmV"/>
-                                    <constraint firstAttribute="width" constant="84" id="rjf-rU-L1m"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="84" id="wXf-nn-pSi"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1P-2E-Zlr">
                                 <rect key="frame" x="276" y="550" width="49" height="30"/>
                                 <state key="normal" title="Photos">
@@ -122,14 +114,21 @@
                                     <action selector="photoButtonPressed:" destination="qGm-Qg-PbA" eventType="touchUpInside" id="g9T-IW-ARP"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="beatles.png" translatesAutoresizingMaskIntoConstraints="NO" id="dJg-EI-47x">
+                                <rect key="frame" x="180" y="148" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Gyy-69-Qjf"/>
+                                    <constraint firstAttribute="height" constant="128" id="ygV-EU-vhe"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.6132170419534817" green="0.72179811945234373" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dJg-EI-47x" secondAttribute="centerX" id="2oU-bT-myZ"/>
                             <constraint firstAttribute="centerX" secondItem="yFl-xQ-z3q" secondAttribute="centerX" id="FbA-UK-FSh"/>
                             <constraint firstAttribute="centerX" secondItem="L1P-2E-Zlr" secondAttribute="centerX" id="Ldq-CW-MaH"/>
-                            <constraint firstAttribute="centerX" secondItem="PQV-Jw-VYc" secondAttribute="centerX" id="Vo4-P4-sGU"/>
+                            <constraint firstItem="dJg-EI-47x" firstAttribute="top" secondItem="yQN-3H-jqj" secondAttribute="bottom" constant="8" id="Rqr-U2-leT"/>
                             <constraint firstItem="yQN-3H-jqj" firstAttribute="top" secondItem="yFl-xQ-z3q" secondAttribute="bottom" constant="8" id="WUp-0F-kmo"/>
-                            <constraint firstItem="PQV-Jw-VYc" firstAttribute="top" secondItem="yQN-3H-jqj" secondAttribute="bottom" constant="8" id="ZUa-m0-3Kv"/>
                             <constraint firstAttribute="centerX" secondItem="yQN-3H-jqj" secondAttribute="centerX" id="bV9-fD-iug"/>
                             <constraint firstItem="yFl-xQ-z3q" firstAttribute="top" secondItem="rYV-rx-rCa" secondAttribute="bottom" constant="8" id="c4B-Kl-5eA"/>
                             <constraint firstItem="plk-Va-1ou" firstAttribute="top" secondItem="L1P-2E-Zlr" secondAttribute="bottom" constant="20" id="ncl-20-C3K"/>
@@ -137,7 +136,7 @@
                     </view>
                     <connections>
                         <outlet property="firstNameTextField" destination="yFl-xQ-z3q" id="XRb-2Q-xhh"/>
-                        <outlet property="imageView" destination="PQV-Jw-VYc" id="AxN-BT-cE7"/>
+                        <outlet property="imageView" destination="dJg-EI-47x" id="cM9-39-ZVT"/>
                         <outlet property="lastNameTextField" destination="yQN-3H-jqj" id="ota-FU-way"/>
                     </connections>
                 </viewController>
@@ -165,6 +164,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="beatles.png" width="900" height="563"/>
         <image name="paul.jpg" width="275" height="327"/>
     </resources>
 </document>

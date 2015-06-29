@@ -15,10 +15,8 @@
 		7A6CA9251B291ADB0060CB4E /* TableViewPlayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CA9241B291ADB0060CB4E /* TableViewPlayTests.swift */; };
 		7A6CA92F1B2926260060CB4E /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CA92E1B2926260060CB4E /* Person.swift */; };
 		7A6CA9341B2933450060CB4E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6CA9331B2933450060CB4E /* DetailViewController.swift */; };
-		7A7033D21B335DF1005C1F15 /* george.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A7033CE1B335DF1005C1F15 /* george.jpg */; };
-		7A7033D31B335DF1005C1F15 /* john.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A7033CF1B335DF1005C1F15 /* john.jpg */; };
 		7A7033D41B335DF1005C1F15 /* paul.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A7033D01B335DF1005C1F15 /* paul.jpg */; };
-		7A7033D51B335DF1005C1F15 /* ringo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7A7033D11B335DF1005C1F15 /* ringo.jpg */; };
+		7ACFB50B1B41AF0200C62A18 /* beatles.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ACFB50A1B41AF0200C62A18 /* beatles.png */; };
 		7AF776411B3B110D0062BFCE /* People.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AF776401B3B110D0062BFCE /* People.plist */; };
 		7AF776431B3B1D6C0062BFCE /* PersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF776421B3B1D6C0062BFCE /* PersonCell.swift */; };
 /* End PBXBuildFile section */
@@ -46,10 +44,8 @@
 		7A6CA9241B291ADB0060CB4E /* TableViewPlayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPlayTests.swift; sourceTree = "<group>"; };
 		7A6CA92E1B2926260060CB4E /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		7A6CA9331B2933450060CB4E /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		7A7033CE1B335DF1005C1F15 /* george.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = george.jpg; sourceTree = "<group>"; };
-		7A7033CF1B335DF1005C1F15 /* john.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = john.jpg; sourceTree = "<group>"; };
 		7A7033D01B335DF1005C1F15 /* paul.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paul.jpg; sourceTree = "<group>"; };
-		7A7033D11B335DF1005C1F15 /* ringo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ringo.jpg; sourceTree = "<group>"; };
+		7ACFB50A1B41AF0200C62A18 /* beatles.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = beatles.png; sourceTree = "<group>"; };
 		7AF776401B3B110D0062BFCE /* People.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = People.plist; sourceTree = "<group>"; };
 		7AF776421B3B1D6C0062BFCE /* PersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,9 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				7AF776401B3B110D0062BFCE /* People.plist */,
-				7A7033CE1B335DF1005C1F15 /* george.jpg */,
-				7A7033CF1B335DF1005C1F15 /* john.jpg */,
-				7A7033D11B335DF1005C1F15 /* ringo.jpg */,
+				7ACFB50A1B41AF0200C62A18 /* beatles.png */,
 				7A7033D01B335DF1005C1F15 /* paul.jpg */,
 				7A6CA90D1B291ADA0060CB4E /* Info.plist */,
 			);
@@ -240,14 +234,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ACFB50B1B41AF0200C62A18 /* beatles.png in Resources */,
 				7A6CA9141B291ADA0060CB4E /* Main.storyboard in Resources */,
 				7A7033D41B335DF1005C1F15 /* paul.jpg in Resources */,
-				7A7033D31B335DF1005C1F15 /* john.jpg in Resources */,
 				7AF776411B3B110D0062BFCE /* People.plist in Resources */,
 				7A6CA9191B291ADA0060CB4E /* LaunchScreen.xib in Resources */,
-				7A7033D21B335DF1005C1F15 /* george.jpg in Resources */,
 				7A6CA9161B291ADA0060CB4E /* Images.xcassets in Resources */,
-				7A7033D51B335DF1005C1F15 /* ringo.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

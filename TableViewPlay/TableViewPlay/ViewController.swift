@@ -58,7 +58,7 @@ class ViewController: UIViewController, UITableViewDataSource {
     let cell = self.tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! PersonCell
     
     cell.backgroundColor = UIColor.whiteColor()
-    cell.personImageView.layer.cornerRadius = 15
+    cell.personImageView.layer.cornerRadius = 3
     cell.personImageView.layer.masksToBounds = true;
     cell.personImageView.layer.borderWidth = 1
     cell.personImageView.layer.borderColor = UIColor.blueColor().CGColor

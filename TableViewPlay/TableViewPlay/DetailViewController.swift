@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
   
+  
   @IBOutlet weak var imageView: UIImageView!
   @IBOutlet weak var firstNameTextField: UITextField!
   @IBOutlet weak var lastNameTextField: UITextField!
@@ -20,6 +21,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     super.viewDidLoad()
     imageView.layer.cornerRadius = 8
     imageView.layer.masksToBounds = true;
+    imageView.layer.borderWidth = 1
+    imageView.layer.borderColor = UIColor.blueColor().CGColor
     self.setupTextFields()
   }
   
